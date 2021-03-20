@@ -19,7 +19,9 @@ const Destination = () => {
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = data => setLocationName(data);
 
-
+    const handleSearch = () => {
+        setSubmit(true)
+    }
     return (
         <div className="row">
             <div className="col-lg-3 col-md-4 col-sm-6 m-auto">
@@ -34,7 +36,7 @@ const Destination = () => {
       <input className="w-100 rounded border-primary p-1 my-3" name="to" defaultValue="Golshan" placeholder="End Location" ref={register({ required: true })} /><br/>
       {errors.to && <span className="text-danger">To location name is required</span>}
 
-      <input className="searchButton" type="submit" value="Search" onClick={() => setSubmit(!submit)}/> 
+      <input className="searchButton" type="submit" value="Search" onClick={() => handleSearch(submit)}/> 
     </form>
             {submit && <div className="searchResult">
             <h4 className="my-2"><GeoAlt color="royalblue" size={35} />From : {locationName.from}</h4>
