@@ -125,7 +125,9 @@ return (
   <div className="container login">
 
     <form className="formStyle" action="" onSubmit={handleSubmit}>
+
         <h3>{newUser ? "Create New Account" : "Place Log In"}</h3>
+
       {newUser && (
         <input
         className="inputFiled"
@@ -136,6 +138,7 @@ return (
           required
         />
       )}
+
       <input
       className="inputFiled"
         onChange={handleChange}
@@ -144,6 +147,7 @@ return (
         placeholder="Enter your email"
         required
       />
+
       <input
       className="inputFiled"
         onChange={handleChange}
@@ -152,6 +156,7 @@ return (
         placeholder="Enter your password"
         required
       />
+
       {newUser && (
         <input
         className="inputFiled"
@@ -162,7 +167,9 @@ return (
           required
         />
       )}
+
       <input className="submitButton" type="submit" value={newUser ? "Create Account" : "Log In"}/>
+
       <div className="newAccount">
       <input
       type="checkbox"
@@ -170,8 +177,10 @@ return (
       id=""
       onChange={() => setNewUser(!newUser)}
     />
+
     <label htmlFor="newUser">Are You New User?</label>
       </div>
+
     </form>
 
     <strong style={{ color: "red" }}>{loggedInUser.error}</strong>

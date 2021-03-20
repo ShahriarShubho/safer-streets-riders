@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
  
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
- 
+const AnyReactComponent = ({ text }) => <div>{text}</div>; 
 class GoogleMap extends Component {
   static defaultProps = {
     center: {
@@ -14,7 +13,7 @@ class GoogleMap extends Component {
  
   render() {
     return (
-      // Important! Always set the container height explicitly
+
       <div style={{ height: '100vh', width: '100%', marginTop: '20px', padding : '20px'}}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: "AIzaSyBbzlDNRSFu5wTA34yhPVm85NQc1ebNtww" }}
