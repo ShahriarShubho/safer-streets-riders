@@ -4,8 +4,7 @@ import fakeData from '../fakData/fakeData.json'
 import './Home.css'
 
 const Home = () => {
-
-    
+   
     return (
         <section className="homeStyle">
             <h1 className="text-center text-info m-5">Choose Your Rides Type</h1>

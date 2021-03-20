@@ -123,18 +123,7 @@ const updateUserInfo = (name) => {
 
 return (
   <div className="container login">
-    {/* <p>name : {loggedInUser.displayName}</p>
-    <br /> */}
-      <div className="newAccount">
-      <input
-      type="checkbox"
-      name="newUser"
-      id=""
-      onChange={() => setNewUser(!newUser)}
-    />
-    <label htmlFor="newUser">Are You New User?</label>
-      </div>
-   
+
     <form className="formStyle" action="" onSubmit={handleSubmit}>
         <h3>{newUser ? "Create New Account" : "Place Log In"}</h3>
       {newUser && (
@@ -173,13 +162,17 @@ return (
           required
         />
       )}
-      <input className="submitButton" type="submit" value={newUser ? "Create Account" : "Log In"}/>  
+      <input className="submitButton" type="submit" value={newUser ? "Create Account" : "Log In"}/>
+      <div className="newAccount">
+      <input
+      type="checkbox"
+      name="newUser"
+      id=""
+      onChange={() => setNewUser(!newUser)}
+    />
+    <label htmlFor="newUser">Are You New User?</label>
+      </div>
     </form>
-
-{/* 
-    <p>Name : {loggedInUser.name}</p>
-    <p>Email : {loggedInUser.email}</p>
-    <p>Password : {loggedInUser.password}</p> */}
 
     <strong style={{ color: "red" }}>{loggedInUser.error}</strong>
     {loggedInUser.success && (
@@ -187,7 +180,8 @@ return (
         User {newUser ? "Create" : "Logged In"} Successfully
       </strong>
     )}
-        <button className="btn btn-primary w-100 my-3" onClick={singInGoogle}><Google color="#3cba54" size={35} />  Continue With Google</button>
+      <p className="text-center">---Or---</p>
+        <button className="btn btn-primary w-100 mb-3" onClick={singInGoogle}><Google color="#3cba54" size={35} />  Continue With Google</button>
     </div>
   );
 };
