@@ -122,9 +122,10 @@ const updateUserInfo = (name) => {
 };
 
 return (
+
   <div className="container login">
 
-    <form className="formStyle" action="" onSubmit={handleSubmit}>
+    <form className="formStyle " action="" onSubmit={handleSubmit}>
 
         <h3>{newUser ? "Create New Account" : "Place Log In"}</h3>
 
@@ -140,7 +141,7 @@ return (
       )}
 
       <input
-      className="inputFiled"
+      className="inputFiled rounded border-primary"
         onChange={handleChange}
         type="email"
         name="email"
@@ -149,25 +150,15 @@ return (
       />
 
       <input
-      className="inputFiled"
+      className="w-100 rounded border-primary mt-3"
         onChange={handleChange}
         type="password"
         name="password"
         placeholder="Enter your password"
         required
       />
-
-      {newUser && (
-        <input
-        className="inputFiled"
-          type="password"
-          onChange={handleChange}
-          name="confirm-password"
-          placeholder="Confirm Password"
-          required
-        />
-      )}
-
+      <small className="mb-3 d-inline-block">Note : Password must be 6 or more</small>
+      
       <input className="submitButton" type="submit" value={newUser ? "Create Account" : "Log In"}/>
 
       <div className="newAccount">
@@ -192,6 +183,7 @@ return (
       <p className="text-center">---Or---</p>
         <button className="btn btn-primary w-100 mb-3" onClick={singInGoogle}><Google color="#3cba54" size={35} />  Continue With Google</button>
     </div>
+
   );
 };
 

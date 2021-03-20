@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import './CardData.css'
 
 const CardData = (props) => {
-  const { name, img } = props.cardData;
+  const { name, img, description} = props.cardData;
     
   return (
     <div className="col-lg-3 col-md-6 col-sm-9 col-9 m-auto text-center shadow">
@@ -13,6 +13,7 @@ const CardData = (props) => {
         <Card.Img variant="top" src={img} />
         <Card.Body>
           <Card.Title>{name}</Card.Title>
+          <Card.Text>{description}</Card.Text>
           <Button variant="primary">Details</Button>
         </Card.Body>
       </Card>
