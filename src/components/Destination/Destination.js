@@ -7,7 +7,7 @@ import GoogleMap from '../GoogleMap/GoogleMap';
 
 
 const Destination = () => {
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
+    const [loggedInUser] = useContext(UserContext)
 
     const riderName = fakeData.find(ride => ride.name ===  "Bike")
     const {name, img, price, seat} = riderName;

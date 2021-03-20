@@ -9,7 +9,7 @@ import GoogleMap from '../GoogleMap/GoogleMap';
 
 
 const RideInfo = () => {
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
+    const [loggedInUser] = useContext(UserContext)
 
     const {rideType} = useParams() 
 
