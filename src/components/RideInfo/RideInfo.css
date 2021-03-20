@@ -10,6 +10,20 @@
     border-radius : 10px;
 }
 
-.container{
-    width:350px
+
+.searchButton{
+    color: whitesmoke;
+    width: 100%;
+    border-radius: 20px;
+    border: none;
+    background: orange;
+    padding: 5px;
+    font-weight: 700;
+}
+.searchResult{
+    background-color: #91a8bf;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 20px;
+    margin-bottom: 15px;
 }

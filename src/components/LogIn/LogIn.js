@@ -5,6 +5,7 @@ import firebaseConfig from "./firebase.config";
 import { UserContext } from "../../App";
 import { useHistory, useLocation } from "react-router";
 import './LogIn.css'
+import { Google} from 'react-bootstrap-icons';
 
 if(!firebase.apps.length){
 
@@ -15,7 +16,6 @@ if(!firebase.apps.length){
 const LogIn = () => {
 
 const [loggedInUser, setLoggedInUser,] = useContext(UserContext)
-
 const [newUser, setNewUser] = useState(false);
 
 let history = useHistory();
@@ -23,8 +23,7 @@ let location = useLocation();
 let { from } = location.state || { from: { pathname: "/" } };
 
 //google Sing In method
-
-var googleProvider = new firebase.auth.GoogleAuthProvider();
+const googleProvider = new firebase.auth.GoogleAuthProvider();
 const singInGoogle = () => {
   firebase
     .auth()
@@ -44,6 +43,7 @@ const singInGoogle = () => {
     });
 };
 
+//Handle Input Change value and valid email and password
 const handleChange = (event) => {
   let isValidForm = true;
   if (event.target.name === "email") {
@@ -59,6 +59,7 @@ const handleChange = (event) => {
   }
 };
 
+//Handle New User Log In Information
 const handleSubmit = (event) => {
   if (newUser && loggedInUser.email && loggedInUser.password) {
     firebase
@@ -79,6 +80,8 @@ const handleSubmit = (event) => {
         setLoggedInUser(newUserInfo);
       });
   }
+
+  //handle already logged In user info
   if (!newUser && loggedInUser.email && loggedInUser.password) {
     firebase
       .auth()
@@ -102,6 +105,8 @@ const handleSubmit = (event) => {
   event.preventDefault();
 };
 
+
+//update new user Information
 const updateUserInfo = (name) => {
   const user = firebase.auth().currentUser;
   user
@@ -117,9 +122,9 @@ const updateUserInfo = (name) => {
 };
 
 return (
-  <div className="container">
-    <p>name : {loggedInUser.displayName}</p>
-    <br />
+  <div className="container login">
+    {/* <p>name : {loggedInUser.displayName}</p>
+    <br /> */}
       <div className="newAccount">
       <input
       type="checkbox"
@@ -171,17 +176,18 @@ return (
       <input className="submitButton" type="submit" value={newUser ? "Create Account" : "Log In"}/>  
     </form>
 
-
+{/* 
     <p>Name : {loggedInUser.name}</p>
     <p>Email : {loggedInUser.email}</p>
-    <p>Password : {loggedInUser.password}</p>
+    <p>Password : {loggedInUser.password}</p> */}
+
     <strong style={{ color: "red" }}>{loggedInUser.error}</strong>
     {loggedInUser.success && (
       <strong style={{ color: "green" }}>
         User {newUser ? "Create" : "Logged In"} Successfully
       </strong>
     )}
-        <button className="btn btn-primary" onClick={singInGoogle}>Continue With Google</button>
+        <button className="btn btn-primary w-100 my-3" onClick={singInGoogle}><Google color="#3cba54" size={35} />  Continue With Google</button>
     </div>
   );
 };

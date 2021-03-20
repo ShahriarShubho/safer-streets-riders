@@ -7,8 +7,8 @@ const CardData = (props) => {
   const { name, img, description } = props.cardData;
     
   return (
-    <div className="col-md-3 cardStyle text-center shadow">
-      <Link to={`/name/${name}`}>
+    <div className="col-lg-3 col-md-6 col-sm-9 col-9 m-auto cardStyle text-center shadow">
+      <Link  className="text-decoration-none text-dark" to={`/name/${name}`}>
       <Card>
         <Card.Img variant="top" src={img} />
         <Card.Body>
