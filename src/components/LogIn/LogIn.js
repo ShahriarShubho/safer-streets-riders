@@ -51,13 +51,18 @@ const handleChange = (event) => {
     isValidForm = /\S+@\S+\.\S+/.test(event.target.value);
   }
   if (event.target.name === "password") {
+    if(event.target.value.length >= 6){
     isValidForm = event.target.value.length >= 6;
-  }
+  }else{
+    const newUserInfo = {error : "Invalid Email or Password"}
+    setLoggedInUser(newUserInfo);
+  }}
   if (isValidForm) {
     const newUserInfo = { ...loggedInUser };
     newUserInfo[event.target.name] = event.target.value;
     setLoggedInUser(newUserInfo);
   }
+ 
 };
 
 //Handle New User Log In Information
@@ -154,7 +159,7 @@ return (
 
       <input
       className="w-100 rounded border-primary mt-3"
-        onChange={handleChange}
+        onBlur={handleChange}
         type="password"
         name="password"
         placeholder="Enter your password"

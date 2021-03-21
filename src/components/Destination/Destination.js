@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { UserContext } from "../../App";
 import fakeData from "../fakData/fakeData.json";
-import { PeopleFill, GeoAlt, GeoFill } from "react-bootstrap-icons";
+import { PeopleFill, GeoAlt, GeoFill, Calendar3 } from "react-bootstrap-icons";
 import GoogleMap from "../GoogleMap/GoogleMap";
 import { useParams } from "react-router";
 import "./Destination.css";
@@ -26,10 +26,10 @@ const Destination = () => {
     newLocation[event.target.name] = event.target.value;
     setLocationName(newLocation);
   };
-   const handleSubmit = (event) => {
-    setSubmit(!submit)
-     event.preventDefault();
-   }
+  const handleSubmit = (event) => {
+    setSubmit(!submit);
+    event.preventDefault();
+  };
   return (
     <div className="row">
       <div className="col-lg-3 col-md-4 col-sm-6 m-auto">
@@ -64,11 +64,16 @@ const Destination = () => {
               onChange={handleChange}
             />
 
+            <strong>Travel Date : </strong>
             <input
-              className="searchButton"
-              type="submit"
-              value="Search"
-            />
+              type="date"
+              className="w-100 rounded border-primary p-1 mb-3"
+              name="date"
+              required
+              onChange={handleChange}
+            ></input>
+
+            <input className="searchButton" type="submit" value="Search" />
           </form>
         )}
 
@@ -84,6 +89,10 @@ const Destination = () => {
               To : {locationName.to}
             </h4>
 
+            <h5 className="my-2">
+              <Calendar3 color="royalblue" size={27} />
+              Date : {locationName.date}
+            </h5>
             <div className="rideInfo">
               <img src={img} alt="" />
               <p>{name}</p>
@@ -113,7 +122,7 @@ const Destination = () => {
           </div>
         )}
       </div>
-      
+
       <div className="col-lg-8 col-md-7 col-sm-6">
         <GoogleMap />
       </div>
