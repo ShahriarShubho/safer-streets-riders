@@ -29,7 +29,7 @@ const singInGoogle = () => {
     .auth()
     .signInWithPopup(googleProvider)
     .then((result) => {
-      var {displayName, email} = result.user;
+      const {displayName, email} = result.user;
       const userData ={name : displayName, email : email}
       setLoggedInUser(userData);
       history.replace(from);
@@ -92,7 +92,9 @@ const handleSubmit = (event) => {
         newUserInfo.success = true;
         setLoggedInUser(newUserInfo);
         history.replace(from);
-        console.log("sing in user", res.user);
+        const {displayName, email} = res.user;
+        const userData ={name : displayName, email : email}
+        setLoggedInUser(userData);
       })
       .catch((error) => {
         const errorMessage = error.message;

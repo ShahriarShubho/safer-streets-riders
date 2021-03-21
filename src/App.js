@@ -10,7 +10,6 @@ import Header from './components/Header/Header';
 import Home from "./components/Home/Home";
 import LogIn from "./components/LogIn/LogIn";
 import NotFound from "./components/NotFound/NotFound";
-import RideInfo from "./components/RideInfo/RideInfo";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import Destination from "./components/Destination/Destination";
 import Footer from "./components/Footer/Footer";
@@ -25,7 +24,6 @@ function App() {
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
     <Router>
       <Header/>
-      {/* <h1>name {loggedInUser.name}</h1> */}
        <Switch>
        <Route exact path="/">
             <Home />
@@ -36,8 +34,8 @@ function App() {
           <Route path="/login">
             <LogIn/>
           </Route>
-          <PrivateRoute path="/name/:rideType">
-           <RideInfo/>
+          <PrivateRoute path="/rideType/:rideType">
+           <Destination/>
           </PrivateRoute>
           <PrivateRoute path="/destination">
            <Destination/>
