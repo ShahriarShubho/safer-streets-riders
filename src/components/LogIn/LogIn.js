@@ -53,8 +53,8 @@ const handleChange = (event) => {
   if (event.target.name === "password") {
     if(event.target.value.length >= 6){
     isValidForm = event.target.value.length >= 6;
-  }else{
-    const newUserInfo = {error : "Invalid Email or Password"}
+    }else{
+    const newUserInfo = {error : "Password should have at least 6 character"}
     setLoggedInUser(newUserInfo);
   }}
   if (isValidForm) {

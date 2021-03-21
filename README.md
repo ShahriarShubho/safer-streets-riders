@@ -10,5 +10,6 @@ How Can i create this project given bellow...
 5. Use bootstrap and react bootstrap for design.
 6. Use bootstrap Icon pack for Icon.
 7. Customize css for batter design.
+8. And This website is responsive Desktop, mobile also Tab.
 
 Here the live site link : https://wonderful-pare-c9a390.netlify.app
