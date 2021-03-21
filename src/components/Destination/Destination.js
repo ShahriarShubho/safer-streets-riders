@@ -26,7 +26,10 @@ const Destination = () => {
     newLocation[event.target.name] = event.target.value;
     setLocationName(newLocation);
   };
-
+   const handleSubmit = (event) => {
+    setSubmit(!submit)
+     event.preventDefault();
+   }
   return (
     <div className="row">
       <div className="col-lg-3 col-md-4 col-sm-6 m-auto">
@@ -34,7 +37,7 @@ const Destination = () => {
         <h5>Riders Type : {name}</h5>
 
         {!submit && (
-          <div>
+          <form onSubmit={handleSubmit}>
             <strong>
               <GeoAlt color="royalblue" size={22} />
               Pick From :{" "}
@@ -65,9 +68,8 @@ const Destination = () => {
               className="searchButton"
               type="submit"
               value="Search"
-              onClick={() => setSubmit(!submit)}
             />
-          </div>
+          </form>
         )}
 
         {submit && (
