@@ -18,6 +18,7 @@ const LogIn = () => {
 const [loggedInUser, setLoggedInUser,] = useContext(UserContext)
 const [newUser, setNewUser] = useState(false);
 
+
 let history = useHistory();
 let location = useLocation();
 let { from } = location.state || { from: { pathname: "/" } };
@@ -159,7 +160,7 @@ return (
         placeholder="Enter your password"
         required
       />
-      <small className="mb-3 d-inline-block">Note : Password must be 6 or more</small>
+      <small className="mb-3 d-inline-block">Note : Password must 6 or more</small>
       
       <input className="submitButton" type="submit" value={newUser ? "Create Account" : "Log In"}/>
 

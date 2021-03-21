@@ -8,7 +8,7 @@ const CardData = (props) => {
     
   return (
     <div className="col-lg-3 col-md-6 col-sm-9 col-9 m-auto text-center shadow">
-      <Link className="text-decoration-none text-dark" to={`/rideType/${name}`}>
+      <Link className="text-decoration-none text-dark" to={`/destination/${name}`}>
       <Card className="cardStyle" >
         <Card.Img variant="top" src={img} />
         <Card.Body>

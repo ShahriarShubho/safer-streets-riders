@@ -10,17 +10,20 @@ const Header = () => {
   <Navbar.Brand className="text-warning font-weight-bold" href="#home">Safer Streets Riders</Navbar.Brand>
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
+
     <Nav className="m-auto">
       <Link className="link" to="/home">Home</Link>
-      <Link className="link" to="/destination">Destination</Link>
+      <Link className="link" to="/destination/Bike">Destination</Link>
       <Link className="link" to="#home">Blog</Link>
       <Link className="link" to="#link">Contract</Link>
       <Link to="/login" className="linkButton">Log In</Link>
     </Nav>
+
     <Form inline>
       <FormControl type="text" placeholder="Search" className="mr-sm-2" />
       <Button variant="outline-success">Search</Button>
     </Form>
+    
   </Navbar.Collapse>
 </Navbar>
       </>
