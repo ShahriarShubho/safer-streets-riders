@@ -6,12 +6,12 @@
 # Safer Streets Rider
 
 It is a ride sharing website. On this website, you can search for places to visit and can see the description of the spectacular places.This site I integrate google map. Here are more facilities for a user. They are:
-➢ Users can sign up using his/her email.
-➢ Users can continue to using Google firebase authentication shortly
-➢ Users can read the description of the places and click 'Booking' to make a booking for that place.
-➢ Then he/she have to fill up a form containing his booking information.
-➢ After clicking start booking, he/she can see his/her booking along with a google map.
-➢ This website is responsive Desktop, mobile also Tab.
+- Users can sign up using his/her email.
+-  Users can continue to using Google firebase authentication shortly
+- Users can read the description of the places and click 'Booking' to make a booking for that place.
+- Then he/she have to fill up a form containing his booking information.
+- After clicking start booking, he/she can see his/her booking along with a google map.
+- This website is responsive Desktop, mobile also Tab.
 
 ## Technology: 
 - HTML5
