@@ -23,4 +23,4 @@ It is a ride sharing website. On this website, you can search for places to visi
 - React Router
 - Firebase Authentication
 
-You can visit the live site: [Safer Streets Rider](https://premier-sports-team.netlify.app/)
+You can visit the live site: [Safer Streets Rider](https://safer-streets-rider.netlify.app/)
